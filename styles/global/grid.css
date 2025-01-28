@@ -1,0 +1,61 @@
+:root {
+    --gridGap: 15px;
+}
+
+.grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-left: var(--gridGap);
+}
+
+.grid, .row {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+  
+.item { 
+    flex: 1;
+    padding-right: var(--gridGap);
+    margin-bottom: var(--gridGap);
+}
+
+.item-25 { flex-basis: 25%; }
+.item-33 { flex-basis: 33.33%; }
+.item-50 { flex-basis: 50%; }
+.item-66 { flex-basis: 66.67%; }
+.item-75 { flex-basis: 75%; }
+.item-100 { flex-basis: 100%; }
+
+@media (max-width: 1200px) {
+    .item { flex-basis: 33.33%; } 
+    .item-100 { flex-basis: 100%; }
+}
+
+@media (max-width: 950px) {
+    .item { flex-basis: 50%; } 
+    .item-100 { flex-basis: 100%; }
+}
+
+@media (max-width: 700px) {
+    .item { flex-basis: 100%; }
+}
+
+/* Usage
+<main class="grid">
+    <section class="row">
+        <div class="item item-25">
+            item
+        </div>
+        <div class="item item-25">
+            item
+        </div>
+        <div class="item item-25">
+            item
+        </div>
+        <div class="item item-25">
+            item
+        </div>
+    </section>
+</main>
+*/

@@ -1,0 +1,16 @@
+video {
+    width: 100%;
+    height: auto;
+    padding: var(--video-padding);
+    object-fit: cover;
+    object-position: center;
+    transition: var(--video-transition);
+    border-radius: var(--video-radius);
+    box-shadow: var(--video-boxShadow);
+    background-color: var(--video-background);
+}
+
+video.active {
+    animation: var(--video-animation);
+    transform-origin: center;
+}

@@ -1,0 +1,6 @@
+a { color: var(--theme); }
+input { color: var(--input); }
+button { color: var(--button); }
+i { color: var(--theme); }
+
+.footer-color { color: var(--footer); }

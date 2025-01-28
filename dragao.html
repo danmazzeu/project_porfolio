@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html lang="pt-br" translate="no">
+    <head>
+        <!-- Metatags -->
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta name="language" content="Portuguese">
+        <meta name="author" content="Daniel Mazzeu">
+        <meta name="robots" content="nofollow, noindex, noarchive">
+        <meta name="google" content="notranslate">
+
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="images/favicon.ico">
+
+        <!-- Title -->
+        <title>Daniel Mazzeu - Enigma</title>
+
+        <!-- Global Styles -->
+        <link rel="stylesheet" href="styles/global/variables.css">
+        <link rel="stylesheet" href="styles/global/global.css">
+
+        <!-- Enigma -->
+        <script defer>
+            function redirectTo() {
+                const urlParams = new URLSearchParams(window.location.search);
+                const criatura = urlParams.get('criatura');
+            
+                if (criatura === 'dragao') {
+                    document.getElementById('dragao').style.display = 'block';
+                } else if (criatura === 'serpente' || criatura == 'cobra') {
+                    document.getElementById('serpente').style.display = 'block';
+                } else {
+                    window.location.href = '/index.html';
+                }
+            }
+          
+            window.onload = redirectTo;
+        </script>
+    </head>
+    <body>
+
+        <!-- Dragao -->
+        <div id="dragao" style="display: none; text-shadow: 1px 1px 1px #000;">
+            <p style="color:var(--theme); margin-bottom:5px;">Que estranho, ninguém havia chegado até aqui...</p>
+            <p style="color:var(--theme); margin-bottom:5px;">Quanta bravura e dedicação.</p>
+            <p style="color:var(--theme); margin-bottom:5px;">Sua inteligência é surpreendente, parabéns.</p>
+            <p style="color:var(--theme); margin-bottom:5px;">Corra para a última etapa, volte para o site e pergunta para a DAN-IA sobre a Dragão Ancestral!</p>
+        </div>
+
+        <!-- Serpente & Cobra -->
+        <div id="serpente" style="display: none; text-shadow: 1px 1px 1px #000;">
+            <p style="color:var(--theme); margin-bottom:5px;">Hahaha, te enganei.</p>
+            <p style="color:var(--theme); margin-bottom:5px;">Te avisaram que havia uma criatura que iria te seduzir não é?.</p>
+            <p style="color:var(--theme); margin-bottom:5px;">Eu imaginei que você fosse procurar por mim, mas não sou eu quem você deve encontrar.</p>
+            <p style="color:var(--theme); margin-bottom:5px;">Volte e tente novamente, você está próximo(a).</p>
+        </div>
+
+    </body>
+</html>

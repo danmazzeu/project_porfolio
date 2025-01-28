@@ -1,0 +1,42 @@
+:root {
+    /* Colors */
+    --theme: #34eb6e;
+    --title: #fff;
+    --title-borderColor: var(--theme);
+    --footer: #666;
+    --instagram: #e1306c !important;
+    --github: #fff !important;
+    --input: #fff;
+    --button: #000;
+
+
+    /* Global */
+    --font-size: 16px;
+    --radius: 8px;
+    --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4), 0 7px 13px -3px rgba(0, 0, 0, 0.3), 0 -3px 0 inset rgba(0, 0, 0, 0.2);
+    --scale: 1.05;
+    --animation: bounce 0.7s;
+
+    /* Card */
+    --card-gap: 15px;
+    --card-padding: 20px;
+    --card-radius: var(--radius);
+    --card-background: #232323;
+    --card-boxSahdow: var(--box-shadow);
+    --card-transition: all 0.3s ease-in-out;
+    --card-animation: var(--animation);
+    --card-linkPadding: 10px 15px;
+    --card-linkBorder: 1px dashed var(--theme);
+    --card-spanBorder: 1px dashed var(--theme);
+    --card-buttonPadding: 10px;
+    --card-inputBorder: 1px solid #444;
+
+    /* Video */
+    --video-radius: var(--radius);
+    --video-boxShadow: var(--box-shadow);
+    --video-hoverScale: var(--scale);
+    --video-animation: var(--animation);
+    --video-padding: 10px;
+    --video-background: #232323;
+    --video-transition: all 0.3s ease-in-out;
+}

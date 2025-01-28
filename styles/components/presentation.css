@@ -1,0 +1,170 @@
+.presentation {
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    min-height: 500px;
+    border-radius: var(--card-radius);
+    background-color: var(--card-background);
+    box-shadow: var(--card-boxSahdow);
+    transition: var(--card-transition);
+}
+
+.presentation.active {
+    animation: var(--card-animation);
+    transform-origin: center;
+}
+
+.presentation-logo {
+    position: absolute;
+    z-index: 10;
+    top: 40px;
+    left: 40px;
+    overflow: hidden;
+    width: 73px;
+    height: 73px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    border: 1px solid #444;
+    box-shadow: var(--card-boxSahdow);
+}
+
+.presentation-logo img {
+    cursor: pointer;
+    width: 70px;
+    height: 70px;
+    border-radius: var(--card-radius);
+}
+
+.presentation-logo .logo-theme {
+    width: 150%;
+    height: 150%;
+    position: absolute;
+    overflow: hidden;
+    z-index: -2;
+    top: -25%;
+    left: -25%;
+    background: linear-gradient(to bottom right, #333, #333, #333, #000, var(--theme), var(--theme), #333, #333, #333, #000);
+    transform: translate(-50%, -50%) rotate(0deg) skewY(-45deg);
+    object-fit: contain;
+    animation: rotate 3s linear infinite;
+}
+
+.presentation-video {
+    position: absolute;
+    z-index: 1;
+    left: -5%;
+    top: -70%;
+    min-width: 110%;
+    min-height: 100%;
+}
+
+.presentation-fade {
+    position: relative;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 40px;
+    background: rgb(0,0,0);
+    background: -moz-linear-gradient(0deg, rgba(26,26,26,0.9) 30%, rgba(0,0,0,0.4) 100%);
+    background: -webkit-linear-gradient(0deg, rgba(26,26,26,0.9) 30%, rgba(0,0,0,0.4) 100%);
+    background: linear-gradient(0deg, rgba(26,26,26,0.9) 30%, rgba(0,0,0,0.4) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#ffffff",GradientType=1);
+}
+
+.presentation-fade h1 {
+    padding-left: 0 !important;
+    border-left: 0 !important;
+    color: #fff;
+    text-shadow: 1px 1px 1px #000;
+    margin-top: 90px;
+    margin-bottom: 15px;
+}
+
+.presentation-fade p { 
+    max-width: 500px;
+    height: auto !important;
+    font-size: calc(var(--font-size) + 2px);
+    font-weight: 400;
+    line-height: 25px;
+    color: #f9f9f9;
+    text-shadow: 1px 1px 1px #000;
+    margin-bottom: 15px;
+}
+
+.presentation-fade span { 
+    font-size: var(--font-size);
+    padding: 0 !important;
+    font-weight: 500;
+    font-style: italic;
+    color: var(--theme);
+    align-self: flex-start;
+    border-radius: 0 !important;
+    border: 0 !important;
+    text-shadow: 1px 1px 1px #000;
+    background-color: transparent !important;
+}
+
+.presentation-wave-a {
+    width: 1500px;
+    position: absolute;
+    z-index: 3;
+    bottom: -90px;
+    left: -100px;
+    opacity: 0.4;
+    box-shadow: 1px 1px 1px #000;
+    transform-origin: left center;
+    animation: wave 5s ease-in-out infinite;
+}
+
+.presentation-wave-b {
+    width: 1500px;
+    position: absolute;
+    z-index: 3;
+    bottom: -100px;
+    left: -200px;
+    box-shadow: 1px 1px 1px #000;
+    transform-origin: left center; 
+    animation: wave 3s ease-in-out alternate infinite;
+}
+
+@media all and (max-width: 1200px) {
+    .presentation-fade p { font-size: 15px; }
+    .presentation-video { top: -55%; }
+    .presentation-wave-a { bottom: -50px; }
+    .presentation-wave-b { bottom: -80px; }
+    .presentation-wave-a,
+    .presentation-wave-b {
+        width: 1400px;
+        left: -200px;
+    }
+}
+
+@media all and (max-width: 900px) {
+    .presentation-fade h1 { font-size: 25px; }
+    .presentation-fade p { 
+        font-size: 14px;
+        max-width: 220px;
+    }
+    .presentation-video { 
+        top: -10%; 
+        min-height: 120%;
+    }
+    .presentation-wave-a { bottom: -120px; }
+    .presentation-wave-b { bottom: -80px; }
+    .presentation-wave-a,
+    .presentation-wave-b {
+        width: 1200px;
+        left: -200px;
+    }
+}

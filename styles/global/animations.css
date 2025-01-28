@@ -1,0 +1,90 @@
+@keyframes jello {
+    11.1% { transform: none }
+    22.2% { transform: skewX(-12.5deg) skewY(-12.5deg) }
+    33.3% { transform: skewX(6.25deg) skewY(6.25deg) }
+    44.4% { transform: skewX(-3.125deg) skewY(-3.125deg) }
+    55.5% { transform: skewX(1.5625deg) skewY(1.5625deg) }
+    66.6% { transform: skewX(-0.78125deg) skewY(-0.78125deg) }
+    77.7% { transform: skewX(0.390625deg) skewY(0.390625deg) }
+    88.8% { transform: skewX(-0.1953125deg) skewY(-0.1953125deg) }
+    100% { transform: none }
+}
+
+@keyframes bounce {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+@keyframes rotate {
+    from{ transform: rotate(0deg); }
+    to{ transform: rotate(360deg); }
+}
+
+@keyframes wave {
+    0% {  transform: translateX(0); }
+    25% { transform: rotate(3deg), translateX(-100px); }
+    50% { transform: rotate(-1deg) translateX(25px); }
+    75% { transform: rotate(2deg) translateX(-55px); }
+    100% { transform: translateX(0); }
+}
+
+@keyframes jump {
+    70% { transform:translateY(0%); }
+    80% { transform:translateY(-15%); }
+    90% { transform:translateY(0%); }
+    95% { transform:translateY(-7%); }
+    97% { transform:translateY(0%); }
+    99% { transform:translateY(-3%); }
+    100% { transform:translateY(0); }
+}
+
+@keyframes move {
+    0% {
+        background-position: center center; 
+        filter: saturate(100%) brightness(100%) contrast(100%);
+    }
+    10% { 
+        background-position: 15% 4%; 
+        filter: saturate(100%) brightness(100%) contrast(100%); 
+    }
+    25% { 
+        background-position: 25% 3%; 
+        filter: saturate(100%) brightness(100%) contrast(100%); 
+    }
+    50% { 
+        background-position: 30% 6%; 
+        filter: saturate(150%) brightness(100%) contrast(110%); 
+    }
+    75% { 
+        background-position: 55% 2%; 
+        filter: saturate(100%) brightness(100%) contrast(100%); 
+    }
+    90% { 
+        background-position: 45% 5%; 
+        filter: saturate(100%) brightness(100%) contrast(100%); 
+    }
+    100% { 
+        background-position: center center; 
+        filter: saturate(100%) brightness(100%) contrast(100%); 
+    }
+}
+
+.shake {
+    animation: shake 0.5s;
+    animation-iteration-count: infinite;
+}
+  
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(0px, 2px) rotate(-1deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 0px) rotate(1deg); }
+    70% { transform: translate(0px, 2px) rotate(-1deg); }
+    80% { transform: translate(1px, -1px) rotate(1deg); }
+    90% { transform: translate(-1px, 2px) rotate(-1deg); }
+    100% { transform: translate(0px, 0px) rotate(0deg); }
+}
