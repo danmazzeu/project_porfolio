@@ -77,10 +77,10 @@ $(document).ready(function() {
                     $('#ia-submit').text('Respondendo...');
                     $('#ia-response').text('').fadeIn('fast');
 
-                    
                     if (audioSource) {
                         audioSource.stop(); 
                     }
+                    
                     fetch(audioName)
                         .then(response => response.arrayBuffer())
                         .then(arrayBuffer => audioContext.decodeAudioData(arrayBuffer))
@@ -120,9 +120,18 @@ $(document).ready(function() {
                                 if (limitAudio) {
                                     stopAudio();
                                 }
-                                $('#ia-submit').attr('disabled', false).text('Perguntar');
                             }
                         }, i * 30);
+                    }
+
+                    for (let sec = 30; sec >= 0; sec--) {
+                        setTimeout(function() {
+                          if (sec === 0) {
+                            $('#ia-submit').attr('disabled', false).text('Perguntar');
+                          } else {
+                            $('#ia-submit').attr('disabled', true).text(`Anti Spam ${sec} segundos`);
+                          }
+                        }, 1000 * (30 - sec)); 
                     }
                 } else {
                     console.error("Error: Unexpected response structure from Gemini API");
