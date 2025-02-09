@@ -11,7 +11,7 @@ function sendmail(name, callback) {
         body: JSON.stringify({
             from: "danmazzeu9@gmail.com",
             to: "danmazzeu9@gmail.com",
-            subject: "Novo click anúncio " + name,
+            subject: "Novo click anúncio - " + name,
             message: `Horário: ${formattedTime} Data: ${formattedDate}`,
             smtp: "smtp.gmail.com",
             port: 465,
@@ -28,7 +28,6 @@ function sendmail(name, callback) {
     })
     .then(data => {
         console.log('Resposta da API:', data);
-        alert("Email enviado com sucesso!");
         if (callback) {
             callback();
         }
@@ -49,22 +48,9 @@ function getParametroUrl(name) {
     const adsValor = urlParams.get(name);
 
     if (adsValor && URLS.hasOwnProperty(adsValor)) {
-        const counterSpan = document.getElementById("counter");
-        let counter = 3;
-
-        counterSpan.textContent = counter;
-
-        const intervalo = setInterval(() => {
-            counter--;
-            counterSpan.textContent = counter;
-
-            if (counter <= 0) {
-                clearInterval(intervalo);
-                sendmail(adsValor, () => {
-                    window.location.assign(URLS[adsValor]);
-                });
-            }
-        }, 1000);
+        sendmail(adsValor, () => {
+            window.location.assign(URLS[adsValor]);
+        });
     } else {
         console.error("URL não encontrada ou parâmetro ads ausente.");
     }
