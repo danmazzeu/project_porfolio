@@ -40,7 +40,7 @@ function sendmail(name, callback) {
 
 const URLS = {
     "digio": ["https://mgm.digio.com.br/bc50/y3ygie6o"],
-    "shopee": ["https://s.shopee.com.br/8pWnMHi6Nc", "intent://open/?url=s.shopee.com.br/8pWnMHi6Nc#Intent;package=com.shopee.br;scheme=http;end"],
+    "shopee": ["https://s.shopee.com.br/8pWnMHi6Nc"],
 };
 
 function getParametroUrl(name) {
@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
             link.textContent = 'Redirecionando...';
             event.preventDefault();
             sendmail(adsValue, () => {
-                window.location.href = URLS[adsValue][1];
+                window.location.href = URLS[adsValue][0];
             });
         });
         link.style.display = 'flex';
