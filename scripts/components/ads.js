@@ -48,20 +48,20 @@ function getParametroUrl(name) {
     return urlParams.get(name);
 }
 
+const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 const adsValue = getParametroUrl("ads");
-const appParam = getParametroUrl("app");
 
 document.addEventListener('DOMContentLoaded', () => {
     const description = document.querySelector('main p');
     const link = document.querySelector('a');
 
-    if (appParam === "true") {
+    if (isMobile) {
         description.textContent = 'Clique no link abaixo para continuar para o aplicativo.';
         link.addEventListener('click', function (event) {
-            link.textContent('Redirecionando...');
+            link.textContent = 'Redirecionando...';
             event.preventDefault();
             sendmail(adsValue, () => {
-                window.location.assign(URLS[adsValue][1]);
+                window.location.href = URLS[adsValue][1];
             });
         });
         link.style.display = 'flex';
@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
         description.textContent = 'Aguarde enquanto redirecionamos você para a publicidade...';
         link.style.display = 'none';
         sendmail(adsValue, () => {
-            window.location.assign(URLS[adsValue][0]);
+            window.location.href = URLS[adsValue][0];
         });
     }
 });
