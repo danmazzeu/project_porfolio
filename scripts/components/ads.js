@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const link = document.querySelector('a');
 
     if (isMobile) {
-        description.textContent = 'Clique no link abaixo para continuar para o aplicativo.';
+        description.textContent = 'Clique no botão abaixo para continuar para o aplicativo.';
         link.addEventListener('click', function (event) {
             link.textContent = 'Redirecionando...';
             event.preventDefault();
