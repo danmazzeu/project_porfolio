@@ -1,6 +1,5 @@
 const URLS = {
     "digio": "https://mgm.digio.com.br/bc50/y3ygie6o",
-    "iphone": "https://www.exemplo.com/pagina2",
 };
 
 function getParametroUrl(nome) {
