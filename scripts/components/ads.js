@@ -39,21 +39,37 @@ function sendmail(name, callback) {
 }
 
 const URLS = {
-    "digio": "https://mgm.digio.com.br/bc50/y3ygie6o",
-    "shopee": "https://s.shopee.com.br/8pWnMHi6Nc",
+    "digio": ["https://mgm.digio.com.br/bc50/y3ygie6o"],
+    "shopee": ["https://s.shopee.com.br/8pWnMHi6Nc", "intent://open/?url=danielmazzeu.com.br/ads.html?ads=shopee#Intent;package=com.shopee.br;scheme=http;end"],
 };
 
 function getParametroUrl(name) {
     const urlParams = new URLSearchParams(window.location.search);
-    const adsValor = urlParams.get(name);
-
-    if (adsValor && URLS.hasOwnProperty(adsValor)) {
-        sendmail(adsValor, () => {
-            window.location.assign(URLS[adsValor]);
-        });
-    } else {
-        window.location.assign(URLS[adsValor]);
-    }
+    return urlParams.get(name);
 }
 
-const adsValor = getParametroUrl("ads");
+const adsValue = getParametroUrl("ads");
+const appParam = getParametroUrl("app");
+
+document.addEventListener('DOMContentLoaded', () => {
+    const description = document.querySelector('main p');
+    const link = document.querySelector('a');
+
+    if (appParam === "true") {
+        description.textContent = 'Clique no link abaixo para continuar para o aplicativo.';
+        link.addEventListener('click', function (event) {
+            link.textContent('Redirecionando...');
+            event.preventDefault();
+            sendmail(adsValue, () => {
+                window.location.assign(URLS[adsValue][1]);
+            });
+        });
+        link.style.display = 'flex';
+    } else {
+        description.textContent = 'Aguarde enquanto redirecionamos você para a publicidade...';
+        link.style.display = 'none';
+        sendmail(adsValue, () => {
+            window.location.assign(URLS[adsValue][0]);
+        });
+    }
+});
