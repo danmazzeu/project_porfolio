@@ -20,9 +20,10 @@ function sendmail(name, callback) {
             password: "fpzj cadg ztit ejmz"
         })
     })
-    .then(response => {
+    .then(async response => {
         if (!response.ok) {
-            return response.json().then(err => {throw new Error(err.error)});
+            const err = await response.json();
+            throw new Error(err.error);
         }
         return response.json();
     })
@@ -34,7 +35,6 @@ function sendmail(name, callback) {
     })
     .catch(error => {
         console.error('Erro na requisição:', error);
-        alert("Erro ao enviar email: " + error.message);
     });
 }
 
@@ -52,7 +52,7 @@ function getParametroUrl(name) {
             window.location.assign(URLS[adsValor]);
         });
     } else {
-        console.error("URL não encontrada ou parâmetro ads ausente.");
+        window.location.assign(URLS[adsValor]);
     }
 }
 
