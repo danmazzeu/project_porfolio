@@ -2,6 +2,7 @@ function sendmail(name, callback) {
     const now = new Date();
     const formattedDate = now.toLocaleDateString('pt-BR');
     const formattedTime = now.toLocaleTimeString('pt-BR');
+    const userAgent = navigator.userAgent;
 
     fetch('https://projectsendmail-production.up.railway.app/sendmail', {
         method: 'POST',
@@ -12,7 +13,7 @@ function sendmail(name, callback) {
             from: "danmazzeu9@gmail.com",
             to: "danmazzeu9@gmail.com",
             subject: "Novo click anúncio - " + name,
-            message: `Horário: ${formattedTime} Data: ${formattedDate}`,
+            message: `Horário: ${formattedTime} Data: ${formattedDate}\nUser-Agent: ${userAgent}`,
             smtp: "smtp.gmail.com",
             port: 465,
             tls: true,
