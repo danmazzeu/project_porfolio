@@ -40,7 +40,8 @@ function sendmail(name, callback) {
 }
 
 const URLS = {
-    "1": ["Secando Em 30 Dias - Kiwify", "https://pay.kiwify.com.br/xPKpEd8?afid=SBDC9eH9"],
+    "1": ["Nail Designer Academy 2.0 ", "https://pay.kiwify.com.br/BXtNqSP?afid=j6YGrq4p"],
+    "2": ["INGLÊS COM A GRINGA - VITALÍCIO", "https://pay.kiwify.com.br/xPKpEd8?afid=SBDC9eH9"],
 };
 
 function getParametroUrl(name) {
