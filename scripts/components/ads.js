@@ -40,8 +40,7 @@ function sendmail(name, callback) {
 }
 
 const URLS = {
-    "digio": ["https://mgm.digio.com.br/bc50/y3ygie6o"],
-    "shopee": ["https://s.shopee.com.br/8pWnMHi6Nc"],
+    "1": ["Secando Em 30 Dias - Kiwify", "https://pay.kiwify.com.br/xPKpEd8?afid=SBDC9eH9"],
 };
 
 function getParametroUrl(name) {
@@ -50,7 +49,7 @@ function getParametroUrl(name) {
 }
 
 const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-const adsValue = getParametroUrl("ads");
+const id = getParametroUrl("id");
 
 document.addEventListener('DOMContentLoaded', () => {
     const description = document.querySelector('main p');
@@ -61,16 +60,16 @@ document.addEventListener('DOMContentLoaded', () => {
         link.addEventListener('click', function (event) {
             link.textContent = 'Redirecionando...';
             event.preventDefault();
-            sendmail(adsValue, () => {
-                window.location.href = URLS[adsValue][0];
+            sendmail(URLS[id][0], () => {
+                window.location.href = URLS[id][1];
             });
         });
         link.style.display = 'flex';
     } else {
         description.textContent = 'Aguarde enquanto redirecionamos você para a publicidade...';
         link.style.display = 'none';
-        sendmail(adsValue, () => {
-            window.location.href = URLS[adsValue][0];
+        sendmail(URLS[id][0], () => {
+            window.location.href = URLS[id][1];
         });
     }
 });
