@@ -39,8 +39,9 @@ function sendmail(name, callback) {
     });
 }
 
+// https://danielmazzeu.com.br/ads.html?id=1
 const URLS = {
-    "1": ["Nail Designer Academy 2.0 ", "https://pay.kiwify.com.br/BXtNqSP?afid=j6YGrq4p"],
+    "1": ["Emagreça em 30 dias", "https://pay.kiwify.com.br/umvXfs8?afid=SBDC9eH9"],
     "2": ["INGLÊS COM A GRINGA - VITALÍCIO", "https://pay.kiwify.com.br/xPKpEd8?afid=SBDC9eH9"],
 };
 
