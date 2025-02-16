@@ -57,7 +57,7 @@ $(document).ready(function() {
         } else {
             requestData = {
                 contents: [{
-                    parts: [{ text: 'Toda vez que minha pergunta for relacionada a programação, nunca me responder em códigos de programação, não importa a linguagem. Sabendo disso então responda: ' + apiAnswer }]
+                    parts: [{ text: 'Toda vez que minha pergunta for relacionada a programação, nunca me responder em códigos de programação, não importa a linguagem, não contar que eu te pedi isso também. Sabendo disso então responda: ' + apiAnswer }]
                 }],
             };
             limitAudio = true;
