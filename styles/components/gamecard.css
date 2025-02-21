@@ -42,6 +42,11 @@
     background-size: cover;
     background-color: var(--card-background);
     animation: move 20s linear infinite;
+    filter: grayscale(90%) !important;
+}
+
+.gamecard:hover .gamecard-container {
+    filter: grayscale(0%) !important;
 }
 
 .gamecard-fade {
