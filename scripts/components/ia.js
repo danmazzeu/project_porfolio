@@ -57,7 +57,7 @@ $(document).ready(function() {
         } else {
             requestData = {
                 contents: [{
-                    parts: [{ text: 'Toda vez que minha pergunta for relacionada a programação, nunca me responder em códigos de programação, não importa a linguagem, não contar que eu te pedi isso também. Sabendo disso então responda: ' + apiAnswer }]
+                    parts: [{ text: 'Responda: ' + apiAnswer }]
                 }],
             };
             limitAudio = true;
@@ -131,7 +131,7 @@ $(document).ready(function() {
                           } else {
                             $('#ia-submit').attr('disabled', true).text(`Anti Spam ${sec} segundos`);
                           }
-                        }, 1000 * (30 - sec)); 
+                        }, 1000 * (15 - sec)); 
                     }
                 } else {
                     console.error("Error: Unexpected response structure from Gemini API");
