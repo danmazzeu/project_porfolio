@@ -8,6 +8,7 @@ $(document).ready(function() {
         let limitAudio = false;
 
         $('#ia-submit').attr('disabled', true).text('Aguarde...');
+        $('#ia-input').attr('disabled', true);
 
         const apiKey = 'AIzaSyCFT4N-asqp0JobkYYfe3ei-2q8ut6W7Cc';
         const apiAnswer = $('#ia-input').val().toLowerCase();
@@ -118,6 +119,7 @@ $(document).ready(function() {
                             element.scrollTop = element.scrollHeight;
 
                             if (i == (responseText.length - 1)) {
+                                $('#ia-input').val('').attr('disabled', false);
                                 if (limitAudio) {
                                     stopAudio();
                                 }
@@ -137,11 +139,10 @@ $(document).ready(function() {
                 } else {
                     console.error("Error: Unexpected response structure from Gemini API");
                 }
-
-                $('#ia-input').val('');
             },
             error: function(jqXHR, textStatus, errorThrown) {
                 console.error("Error:", textStatus, errorThrown);
+                $('#ia-input').attr('disabled', false);
             }
         });
     });
