@@ -62,7 +62,8 @@
     top: -70%;
     min-width: 110%;
     min-height: 100%;
-    filter: grayscale(100%) opacity(30%);
+    filter: grayscale(100%);
+    opacity: 0.1;
 }
 
 .presentation-fade {
@@ -76,11 +77,6 @@
     flex-direction: column;
     align-items: flex-end;
     padding: 40px;
-    background: rgb(0,0,0);
-    background: -moz-linear-gradient(0deg, rgba(26,26,26,0.9) 30%, rgba(0,0,0,0.4) 100%);
-    background: -webkit-linear-gradient(0deg, rgba(26,26,26,0.9) 30%, rgba(0,0,0,0.4) 100%);
-    background: linear-gradient(0deg, rgba(26,26,26,0.9) 30%, rgba(0,0,0,0.4) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#ffffff",GradientType=1);
 }
 
 .presentation-fade h1 {
