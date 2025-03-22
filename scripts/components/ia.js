@@ -131,7 +131,7 @@ $(document).ready(function() {
                           } else {
                             $('#ia-submit').attr('disabled', true).text(`Anti Spam ${sec} segundos`);
                           }
-                        }, 1000 * (10 - sec)); 
+                        }, 1000 * (10 - sec));
                     }
                 } else {
                     console.error("Error: Unexpected response structure from Gemini API");
