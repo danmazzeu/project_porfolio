@@ -111,6 +111,7 @@ $(document).ready(function() {
                     for (let i = 0; i < responseText.length; i++) {
                         setTimeout(function() {
                             typedText += responseText[i];
+                            $('#ia-response').fadeIn('fast');
                             $('#ia-response').html(typedText);
 
                             const element = document.getElementById('ia-response');
