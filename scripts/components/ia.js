@@ -124,14 +124,13 @@ $(document).ready(function() {
                         }, i * 30);
                     }
 
-                    for (let sec = 30; sec >= 0; sec--) {
+                    for (let sec = 10; sec >= 0; sec--) {
                         setTimeout(function() {
-                          if (sec === 0) {
-                            $('#ia-submit').attr('disabled', false).text('Perguntar');
-                          } else {
-                            $('#ia-submit').attr('disabled', true).text(`Anti Spam ${sec} segundos`);
-                          }
-                        }, 1000 * (10 - sec)); 
+                            if (sec === 0) {
+                                $('#ia-submit').attr('disabled', false).text('Perguntar');
+                            } else {
+                                $('#ia-submit').attr('disabled', true).text(`Anti Spam ${sec} segundos`);
+                            }
                         }, 1000 * (10 - sec));
                     }
                 } else {
