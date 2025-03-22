@@ -114,7 +114,7 @@ $(document).ready(function() {
                             typedText += responseText[i];
                             $('#ia-response').fadeIn('fast');
                             $('#ia-response').html(typedText);
-                            $('#ia-submit').attr('disabled', true).text('Respondendo...');
+                            $('#ia-submit').attr('disabled', true).text('Respondendo...').css('color', 'var(--theme)');
 
                             const element = document.getElementById('ia-response');
                             element.scrollTop = element.scrollHeight;
