@@ -114,27 +114,19 @@ $(document).ready(function() {
                             typedText += responseText[i];
                             $('#ia-response').fadeIn('fast');
                             $('#ia-response').html(typedText);
+                            $('#ia-submit').attr('disabled', true).text('Respondendo...');
 
                             const element = document.getElementById('ia-response');
                             element.scrollTop = element.scrollHeight;
 
                             if (i == (responseText.length - 1)) {
                                 $('#ia-input').val('').attr('disabled', false);
+                                $('#ia-submit').attr('disabled', false).text('Perguntar');
                                 if (limitAudio) {
                                     stopAudio();
                                 }
                             }
                         }, i * 30);
-                    }
-
-                    for (let sec = 10; sec >= 0; sec--) {
-                        setTimeout(function() {
-                            if (sec === 0) {
-                                $('#ia-submit').attr('disabled', false).text('Perguntar');
-                            } else {
-                                $('#ia-submit').attr('disabled', true).text(`Anti Spam ${sec} segundos`);
-                            }
-                        }, 1000 * (10 - sec));
                     }
                 } else {
                     console.error("Error: Unexpected response structure from Gemini API");
