@@ -7,7 +7,7 @@ $(document).ready(function() {
         let audioName;
         let limitAudio = false;
 
-        $('#ia-submit').attr('disabled', true).text('Aguarde...');
+        $('#ia-submit').attr('disabled', true).text('Aguarde...').css('color','#fff');
         $('#ia-input').attr('disabled', true);
 
         const apiKey = 'AIzaSyCFT4N-asqp0JobkYYfe3ei-2q8ut6W7Cc';
