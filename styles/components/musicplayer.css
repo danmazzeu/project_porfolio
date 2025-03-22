@@ -1,0 +1,11 @@
+.music-player {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    align-items: center;
+}
+
+.music-player i {
+    cursor: pointer;
+    font-size: 35px;
+}
