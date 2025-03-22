@@ -1,4 +1,4 @@
-const musicFiles = ['musics/Sleep Token - Emergence.mp3', 'musics/song2.mp3', 'musics/song3.mp3'];
+const musicFiles = ['musics/Sleep Token - Emergence.mp3', 'musics/Fire From The Gods - World So Cold.mp3', 'musics/Dark Divine - Cold.mp3'];
 const musicNames = musicFiles.map(file => file.replace('musics/', '').replace('.mp3', ''));
 let currentIndex = 0;
 let isPlaying = false;
@@ -42,7 +42,7 @@ restartBtn.addEventListener('click', () => {
 
 function changeTrack() {
     audio.src = musicFiles[currentIndex];
-    musicTitle.textContent = musicNames[currentIndex];
+    musicTitle.innerHTML = '<i class="bi bi-music-note"></i>' + musicNames[currentIndex];
     audio.play();
     playPauseBtn.classList.replace('bi-play-circle-fill', 'bi-pause-circle-fill');
     isPlaying = true;
