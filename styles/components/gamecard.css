@@ -29,10 +29,6 @@
     animation: rotate 3s linear infinite;
 }
 
-.gamecard:nth-child(odd) .gamecard-gradient {
-    animation-direction: reverse;
-}
-
 .gamecard-container {
     position: absolute;
     z-index: 2;
